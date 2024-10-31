@@ -10,5 +10,6 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SharedContainer: typeof import('./src/components/Shared/Container/Container.vue')['default']
+    SharedNavigation: typeof import('./src/components/Shared/Navigation/Navigation.vue')['default']
   }
 }

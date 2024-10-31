@@ -1,5 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <SharedContainer> container </SharedContainer>
+  <div>
+    <SharedNavigation></SharedNavigation>
+  </div>
 </template>
