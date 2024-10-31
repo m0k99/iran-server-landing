@@ -5,5 +5,6 @@
     <SharedNavigation></SharedNavigation>
     <PagesHomeDomain />
     <PagesHomeHosts />
+    <PagesHomeSecurity />
   </div>
 </template>

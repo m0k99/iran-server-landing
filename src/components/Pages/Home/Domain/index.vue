@@ -30,9 +30,7 @@ import Fire from '@/icon/fire.svg'
             <Fire />
             <span class="text"> داغ ترین پسوندها</span>
           </div>
-          <div>
-            Domains list
-          </div>
+          <div>Domains list</div>
         </div>
         <div
           class="discount-container d-flex gap-2 align-items-center justify-content-center"
@@ -59,6 +57,7 @@ import Fire from '@/icon/fire.svg'
     letter-spacing: -0.06em;
     text-align: center;
     color: #364163;
+    margin-bottom: 0;
   }
 
   &__advertise {

@@ -84,6 +84,7 @@ import Host from '@/icon/host.svg'
     text-align: center;
     color: #364163;
     user-select: none;
+    margin-bottom: 0;
   }
 
   .main-subtitle {
@@ -95,6 +96,7 @@ import Host from '@/icon/host.svg'
     text-align: center;
     color: #364163;
     user-select: none;
+    margin-bottom: 0;
   }
 
   .hosts-container {
