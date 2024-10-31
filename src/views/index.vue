@@ -3,5 +3,6 @@
 <template>
   <div>
     <SharedNavigation></SharedNavigation>
+    <PagesHomeDomain />
   </div>
 </template>

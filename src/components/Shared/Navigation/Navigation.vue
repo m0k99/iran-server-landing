@@ -50,6 +50,8 @@ const menuList = [
   position: sticky !important;
   top: 0;
   right: 0;
+  background: #ffffff;
+  z-index: 10;
 
   .menu {
     &__item {
