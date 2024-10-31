@@ -1,8 +1,5 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
- <div>
-   asd
- </div>
+  <SharedContainer> container </SharedContainer>
 </template>
