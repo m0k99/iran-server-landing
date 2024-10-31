@@ -4,5 +4,6 @@
   <div>
     <SharedNavigation></SharedNavigation>
     <PagesHomeDomain />
+    <PagesHomeHosts />
   </div>
 </template>
