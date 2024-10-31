@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     PagesHomeDomain: typeof import('./src/components/Pages/Home/Domain/index.vue')['default']
     PagesHomeHosts: typeof import('./src/components/Pages/Home/Hosts/index.vue')['default']
+    PagesHomeOperation: typeof import('./src/components/Pages/Home/Operation/Operation.vue')['default']
     PagesHomeSecurity: typeof import('./src/components/Pages/Home/Security/index.vue')['default']
     PagesHomeSecurityCard: typeof import('./src/components/Pages/Home/Security/Card/Card.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

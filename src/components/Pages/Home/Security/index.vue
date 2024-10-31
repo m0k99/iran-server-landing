@@ -31,19 +31,19 @@ import Check from '@/icon/check.svg'
           <div class="item d-flex align-items-center gap-3">
             <Check />
             <span class="text">
-              سرویس های Anti DDos سخت افزاری و نرم افزاری
+             لایسنس های امنیتی اورجینال شامل SSL و آنتی شل
             </span>
           </div>
           <div class="item d-flex align-items-center gap-3">
             <Check />
             <span class="text">
-              سرویس های Anti DDos سخت افزاری و نرم افزاری
+              کانفیگ های امنیتی برای تشخیص و جلوگیری از حملات
             </span>
           </div>
           <div class="item d-flex align-items-center gap-3">
             <Check />
             <span class="text">
-              سرویس های Anti DDos سخت افزاری و نرم افزاری
+              مشــــاوره جـهت مدیریت ریسک و امنیت سرورها
             </span>
           </div>
         </div>

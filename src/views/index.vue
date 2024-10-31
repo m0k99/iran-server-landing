@@ -6,5 +6,6 @@
     <PagesHomeDomain />
     <PagesHomeHosts />
     <PagesHomeSecurity />
+    <PagesHomeOperation />
   </div>
 </template>
