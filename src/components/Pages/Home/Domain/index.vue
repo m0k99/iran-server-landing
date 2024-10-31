@@ -14,7 +14,7 @@ import Fire from '@/icon/fire.svg'
           class="submit d-flex align-items-center justify-content-center"
           type="submit"
         >
-          <Search />
+          <Search class="search" />
         </button>
         <input
           class="input"
@@ -81,6 +81,20 @@ import Fire from '@/icon/fire.svg'
         border: none;
         outline: none;
         inset-inline-start: 8px;
+        transition: all ease-in-out 0.3s;
+
+        .search {
+          fill: #2533cc;
+          transition: all ease-in-out 0.3s;
+        }
+
+        &:hover {
+          background: #2533cc;
+
+          .search {
+            fill: #ffffff;
+          }
+        }
       }
 
       .input {

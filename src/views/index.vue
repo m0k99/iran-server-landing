@@ -7,5 +7,6 @@
     <PagesHomeHosts />
     <PagesHomeSecurity />
     <PagesHomeOperation />
+    <PagesHomeCustomers />
   </div>
 </template>

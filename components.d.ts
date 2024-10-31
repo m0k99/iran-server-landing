@@ -7,6 +7,10 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    CoreHeader: typeof import('./src/components/Core/Header/Header.vue')['default']
+    PagesHomeCustomers: typeof import('./src/components/Pages/Home/Customers/Customers.vue')['default']
+    PagesHomeCustomersLogo: typeof import('./src/components/Pages/Home/Customers/Logo.vue')['default']
+    PagesHomeCustomersRecords: typeof import('./src/components/Pages/Home/Customers/Records.vue')['default']
     PagesHomeDomain: typeof import('./src/components/Pages/Home/Domain/index.vue')['default']
     PagesHomeHosts: typeof import('./src/components/Pages/Home/Hosts/index.vue')['default']
     PagesHomeOperation: typeof import('./src/components/Pages/Home/Operation/Operation.vue')['default']

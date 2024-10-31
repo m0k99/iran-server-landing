@@ -13,12 +13,18 @@ import Check from '@/icon/check.svg'
         <div class="d-flex align-items-center justify-content-start gap-3">
           <Secure />
           <div class="flex-column d-flex gap-2">
-            <h1 class="main-title">نگران امنیت وب‌سایت‌تان باشید!</h1>
-            <h3 class="main-subtitle">
-              ایران سرور با ابزارهای روزآمد؛ سیاست‌های امنیتی استاندارد؛
-              سخت‌افزارهای امنیتی برتر؛ حداکثر امنیت را برای شما به ارمغان
-              می‌آورد.
-            </h3>
+            <CoreHeader>
+              <template #title>
+                <div class="text-start">نگران امنیت وب‌سایت‌تان باشید!</div>
+              </template>
+              <template #subtitle>
+                <div class="text-start">
+                  ایران سرور با ابزارهای روزآمد؛ سیاست‌های امنیتی استاندارد؛
+                  سخت‌افزارهای امنیتی برتر؛ حداکثر امنیت را برای شما به ارمغان
+                  می‌آورد.</div
+                >
+              </template>
+            </CoreHeader>
           </div>
         </div>
         <div class="items-container">
@@ -31,7 +37,7 @@ import Check from '@/icon/check.svg'
           <div class="item d-flex align-items-center gap-3">
             <Check />
             <span class="text">
-             لایسنس های امنیتی اورجینال شامل SSL و آنتی شل
+              لایسنس های امنیتی اورجینال شامل SSL و آنتی شل
             </span>
           </div>
           <div class="item d-flex align-items-center gap-3">

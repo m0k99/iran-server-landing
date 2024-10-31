@@ -6,11 +6,13 @@ import Host from '@/icon/host.svg'
 <template>
   <div class="host-container">
     <SharedContainer>
-      <h1 class="main-title">به دنبال میزبانی حرفه ای و مطمئن هستید؟</h1>
-      <h3 class="main-subtitle">
-        با سرویس های میزبانی ایران سرور با خیال راحت به توسعه کسب و کارتان
-        بپردازید
-      </h3>
+      <CoreHeader>
+        <template #title> به دنبال میزبانی حرفه ای و مطمئن هستید؟ </template>
+        <template #subtitle>
+          با سرویس های میزبانی ایران سرور با خیال راحت به توسعه کسب و کارتان
+          بپردازید
+        </template>
+      </CoreHeader>
       <div class="hosts-container">
         <div class="item d-flex align-items-center flex-column">
           <Server />
@@ -21,7 +23,7 @@ import Host from '@/icon/host.svg'
           <div
             class="details-container d-flex align-items-center justify-content-center gap-4 flex-column"
           >
-            <span class="title"> منابع اختصاصی، حداکثر قدرت </span>
+            <span class="title">منابع اختصاصی، حداکثر قدرت</span>
             <span class="subtitle">
               بدون محدودیت در دسترسی
               <br />
@@ -30,7 +32,7 @@ import Host from '@/icon/host.svg'
           </div>
           <button class="see-plan-btn">مشاهده پلن ها</button>
         </div>
-        <div class="item center d-flex align-items-center flex-column">
+        <div class="item d-flex align-items-center flex-column">
           <Host />
           <div class="type-container d-flex flex-column gap-2">
             <h4 class="title">هاست اشتراکی</h4>
@@ -41,11 +43,8 @@ import Host from '@/icon/host.svg'
           >
             <span class="title">چابکی، سادگی و پایداری</span>
             <span class="subtitle">
-              نصب رایگان سیستم مدیریت سایت
-              <br />
-              برای اطمینان بیشتر RAID سیستم
-              <br />
-              کنترل‌پنل مدیریت هاست
+              نصب رایگان سیستم مدیریت سایت برای اطمینان بیشتر RAID سیستم
+              کنترل‌پنل
             </span>
           </div>
           <button class="see-plan-btn">مشاهده پلن ها</button>
@@ -76,35 +75,13 @@ import Host from '@/icon/host.svg'
   background: #f0f1f4;
   padding: 88px 0;
 
-  .main-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    line-height: 3.375rem;
-    letter-spacing: -0.03em;
-    text-align: center;
-    color: #364163;
-    user-select: none;
-    margin-bottom: 0;
-  }
-
-  .main-subtitle {
-    margin-top: 4px;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 2rem;
-    letter-spacing: -0.01em;
-    text-align: center;
-    color: #364163;
-    user-select: none;
-    margin-bottom: 0;
-  }
-
   .hosts-container {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 30px;
     margin-top: 48px;
+    height: 640px;
 
     .item {
       background: #ffffff;
@@ -112,6 +89,7 @@ import Host from '@/icon/host.svg'
       flex: 1;
       padding: 64px 64px;
       row-gap: 40px;
+      transition: all 0.3s ease-in-out;
 
       .type-container {
         .title {
@@ -167,7 +145,7 @@ import Host from '@/icon/host.svg'
         border: none;
       }
 
-      &.center {
+      &:hover {
         padding: 88px 64px;
 
         .type-container {
