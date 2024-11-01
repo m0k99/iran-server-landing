@@ -16,7 +16,7 @@ import Telegram from '@/icon/ico_pack_social_media_telegram.svg'
           <div
             class="col p-0 d-flex align-items-center justify-content-start gap-3"
           >
-            <Support />
+            <Support class="support-icon" />
             <div class="d-flex flex-column">
               <span class="title">در هر قدم کنار شما هستیم</span>
               <span class="subtitle">
@@ -120,6 +120,11 @@ import Telegram from '@/icon/ico_pack_social_media_telegram.svg'
     color: #c6cdda;
   }
 
+  .support-icon {
+    min-width: 65.21px;
+    min-height: 55.43px;
+  }
+
   .contact {
     .line {
       width: 8px;
@@ -215,6 +220,12 @@ import Telegram from '@/icon/ico_pack_social_media_telegram.svg'
   .divider {
     border: 1px solid rgba(163, 173, 192, 0.05);
     margin: 56px 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .footer {
+    padding: 24px 0;
   }
 }
 </style>

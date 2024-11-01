@@ -25,13 +25,13 @@ const isVisible = ref(false);
 let observer: IntersectionObserver;
 
 const startCounting = () => {
-  const duration = 2000;
-  const incrementTime = 50;
-  const totalSteps = Math.floor(duration / incrementTime);
+  const duration = 2000; // Total duration of counting
+  const incrementTime = 50; // Time interval for increments
+  const totalSteps = Math.floor(duration / incrementTime); // Total number of increments
 
   items.forEach((item, index) => {
     const targetCount = item.count;
-    const increment = targetCount / totalSteps;
+    const increment = targetCount / totalSteps; // Increment value for each step
     let currentCount = 0;
 
     const interval = setInterval(() => {
@@ -40,36 +40,38 @@ const startCounting = () => {
         if (currentCount > targetCount) {
           currentCount = targetCount;
         }
-        animatedCounts.value[index] = Math.round(currentCount);
+        animatedCounts.value[index] = Math.round(currentCount); // Update the displayed count
       } else {
-        clearInterval(interval);
+        clearInterval(interval); // Stop the interval when target is reached
       }
     }, incrementTime);
   });
 };
 
+const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting && !isVisible.value) {
+      isVisible.value = true;
+      startCounting(); // Start counting when the section is visible
+      observer.disconnect(); // Disconnect the observer after starting counting
+    }
+  });
+};
+
 onMounted(() => {
-  observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && !isVisible.value) {
-        isVisible.value = true;
-        startCounting();
-        observer.disconnect();
-      }
-    });
-  }, {
-    threshold: 1.0,
+  observer = new IntersectionObserver(handleIntersect, {
+    threshold: 0.1, // Start counting when 10% of the section is visible
   });
 
   const section = document.querySelector('.card-container');
   if (section) {
-    observer.observe(section);
+    observer.observe(section); // Observe the section for intersection events
   }
 });
 
 onBeforeUnmount(() => {
   if (observer) {
-    observer.disconnect();
+    observer.disconnect(); // Clean up the observer
   }
 });
 </script>
@@ -86,9 +88,6 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </template>
-
-
-
 
 <style scoped lang="scss">
 .card-container {
@@ -131,4 +130,3 @@ onBeforeUnmount(() => {
   }
 }
 </style>
-
