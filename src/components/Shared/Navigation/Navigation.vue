@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import IranServerLogo from '@/icon/IranServerLogo.svg'
 import AngleDown from '@/icon/angle-down.svg'
 import Call from '@/icon/Call.svg'
+import HamburgerIcon from '@/icon/hamburger.svg'
 
 const menuList = [
   'سرور اختصاصی',
@@ -16,6 +17,7 @@ const menuList = [
 ]
 
 const isHeaderVisible = ref(true)
+const isMobileMenuOpen = ref(false)
 let lastScrollY = window.scrollY
 
 const handleScroll = () => {
@@ -29,7 +31,6 @@ const handleScroll = () => {
 }
 
 onMounted(() => window.addEventListener('scroll', handleScroll))
-
 onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 </script>
 
@@ -37,8 +38,29 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   <div :class="['navigation', { 'navigation--hidden': !isHeaderVisible }]">
     <SharedContainer>
       <div class="d-flex align-items-center justify-content-between py-4">
-        <IranServerLogo />
-        <div class="menu d-flex align-items-center justify-content-start gap-3">
+        <div class="d-flex align-items-center justify-content-between gap-4">
+          <HamburgerIcon
+            class="hamburger-icon"
+            @click="isMobileMenuOpen = !isMobileMenuOpen"
+          />
+          <IranServerLogo />
+        </div>
+
+        <transition name="fade">
+          <div v-if="isMobileMenuOpen" class="mobile-menu">
+            <div
+              v-for="(item, index) in menuList"
+              :key="index"
+              class="menu__item"
+            >
+              <span class="item-text">{{ item }}</span>
+            </div>
+          </div>
+        </transition>
+
+        <div
+          class="menu d-none d-md-flex align-items-center justify-content-start gap-3"
+        >
           <div
             v-for="(item, index) in menuList"
             :key="index"
@@ -48,12 +70,13 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
             <AngleDown />
           </div>
         </div>
+
         <div
           class="d-flex align-items-center justify-content-end gap-2 left-side"
         >
           <div class="item">EN</div>
           <div class="item">
-            <Call></Call>
+            <Call />
           </div>
           <button class="btn login-button">ورود | ثبت نام</button>
         </div>
@@ -74,6 +97,29 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
   &.navigation--hidden {
     transform: translateY(-100%);
+  }
+
+  .hamburger-icon {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: none;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 11;
+
+    .menu__item {
+      padding: 0.5rem 0;
+      text-align: center;
+    }
   }
 
   .menu {
@@ -115,5 +161,30 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
       border-radius: 5px;
     }
   }
+}
+
+@media (max-width: 1400px) {
+  .menu {
+    display: none !important;
+  }
+
+  .hamburger-icon {
+    display: block !important;
+  }
+
+  .mobile-menu {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
