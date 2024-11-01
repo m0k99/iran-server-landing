@@ -17,6 +17,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-rtl": "^3.3.4",
     "pinia": "^2.2.4",
+    "swiper": "^11.1.14",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"

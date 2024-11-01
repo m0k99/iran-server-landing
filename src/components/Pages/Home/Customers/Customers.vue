@@ -11,6 +11,7 @@
         </template>
       </CoreHeader>
       <PagesHomeCustomersRecords class="records" />
+      <PagesHomeCustomersComments class="logo"/>
       <PagesHomeCustomersLogo class="logo" />
     </SharedContainer>
   </div>
