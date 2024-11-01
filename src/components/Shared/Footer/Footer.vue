@@ -40,7 +40,7 @@ import Telegram from '@/icon/ico_pack_social_media_telegram.svg'
     </SharedContainer>
     <div class="divider"></div>
     <SharedContainer>
-      <div class="about px-2">
+      <div class="about px-lg-2">
         <div class="content">
           <h1 class="title">رسالت ایران سرور</h1>
           <h3 class="subtitle">

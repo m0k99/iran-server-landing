@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const items = [
   {
@@ -18,62 +18,62 @@ const items = [
     text: 'سال‌ حضور در مارکت',
     count: 18,
   },
-];
+]
 
-const animatedCounts = ref(items.map(() => 0));
-const isVisible = ref(false);
-let observer: IntersectionObserver;
+const animatedCounts = ref(items.map(() => 0))
+const isVisible = ref(false)
+let observer: IntersectionObserver
 
 const startCounting = () => {
-  const duration = 2000; // Total duration of counting
-  const incrementTime = 50; // Time interval for increments
-  const totalSteps = Math.floor(duration / incrementTime); // Total number of increments
+  const duration = 2000
+  const incrementTime = 50
+  const totalSteps = Math.floor(duration / incrementTime)
 
   items.forEach((item, index) => {
-    const targetCount = item.count;
-    const increment = targetCount / totalSteps; // Increment value for each step
-    let currentCount = 0;
+    const targetCount = item.count
+    const increment = targetCount / totalSteps
+    let currentCount = 0
 
     const interval = setInterval(() => {
       if (currentCount < targetCount) {
-        currentCount += increment;
+        currentCount += increment
         if (currentCount > targetCount) {
-          currentCount = targetCount;
+          currentCount = targetCount
         }
-        animatedCounts.value[index] = Math.round(currentCount); // Update the displayed count
+        animatedCounts.value[index] = Math.round(currentCount)
       } else {
-        clearInterval(interval); // Stop the interval when target is reached
+        clearInterval(interval)
       }
-    }, incrementTime);
-  });
-};
+    }, incrementTime)
+  })
+}
 
 const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-  entries.forEach((entry) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting && !isVisible.value) {
-      isVisible.value = true;
-      startCounting(); // Start counting when the section is visible
-      observer.disconnect(); // Disconnect the observer after starting counting
+      isVisible.value = true
+      startCounting()
+      observer.disconnect()
     }
-  });
-};
+  })
+}
 
 onMounted(() => {
   observer = new IntersectionObserver(handleIntersect, {
-    threshold: 0.1, // Start counting when 10% of the section is visible
-  });
+    threshold: 0.1,
+  })
 
-  const section = document.querySelector('.card-container');
+  const section = document.querySelector('.card-container')
   if (section) {
-    observer.observe(section); // Observe the section for intersection events
+    observer.observe(section)
   }
-});
+})
 
 onBeforeUnmount(() => {
   if (observer) {
-    observer.disconnect(); // Clean up the observer
+    observer.disconnect()
   }
-});
+})
 </script>
 
 <template>

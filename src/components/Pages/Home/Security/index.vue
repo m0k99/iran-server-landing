@@ -127,14 +127,14 @@ import Check from '@/icon/check.svg'
     }
     .content-container {
       max-width: 100%;
-      padding: 80px 20px;
+      padding: 80px 0;
     }
   }
 
   @media (max-width: 868px) {
     .content-container {
       max-width: 100%;
-      padding: 60px 16px;
+      padding: 60px 0;
     }
 
     .items-container {
