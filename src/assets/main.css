@@ -12,6 +12,10 @@ body {
     font-family: 'Yekan Bakh FaNum', sans-serif !important;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .header-animated {
     opacity: 0;
     transform: translateY(40px);
