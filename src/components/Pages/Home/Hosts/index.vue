@@ -7,7 +7,7 @@ import Host from '@/icon/host.svg'
   <div class="host-container">
     <SharedContainer>
       <CoreHeader>
-        <template #title> به دنبال میزبانی حرفه ای و مطمئن هستید؟ </template>
+        <template #title> به دنبال میزبانی حرفه ای و مطمئن هستید؟</template>
         <template #subtitle>
           با سرویس های میزبانی ایران سرور با خیال راحت به توسعه کسب و کارتان
           بپردازید
@@ -77,10 +77,10 @@ import Host from '@/icon/host.svg'
 
   .hosts-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // Default to three columns for desktop
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 48px;
-    height: 640px; // Full height for desktop only
+    height: 640px;
 
     .item {
       background: #ffffff;
@@ -146,7 +146,6 @@ import Host from '@/icon/host.svg'
         border: none;
       }
 
-      // Hover effects for desktop only
       &:hover {
         padding: 88px 64px;
 
@@ -173,46 +172,45 @@ import Host from '@/icon/host.svg'
     }
   }
 
-  // Tablet view: two columns without hover effects and fixed height
   @media (max-width: 1024px) {
     .hosts-container {
-      grid-template-columns: repeat(1, 1fr); // Two columns on tablet
-      height: auto; // Remove fixed height
+      grid-template-columns: repeat(1, 1fr);
+      height: auto;
       gap: 20px;
     }
 
     .item {
-      padding: 40px 20px; // Adjust padding for smaller screens
+      padding: 40px 20px;
 
       &:hover {
-        padding: 40px 20px; // Remove hover padding increase
+        padding: 40px 20px;
+
         .type-container .title {
-          font-size: 2rem; // Prevent font size increase on hover
-          color: #000000; // Remove hover color change
+          font-size: 2rem;
+          color: #000000;
         }
+
         .type-container .subtitle {
           color: #000000;
         }
+
         .see-plan-btn {
-          background: #2533cc14; // Keep default background color
-          color: #2533cc; // Keep default text color
+          background: #2533cc14;
+          color: #2533cc;
         }
       }
     }
   }
 
-  // Mobile view: single column layout
   @media (max-width: 768px) {
     .hosts-container {
-      grid-template-columns: 1fr; // Single column on mobile
+      grid-template-columns: 1fr;
       gap: 24px;
     }
 
     .item {
-      padding: 40px 20px; // Adjust padding for smaller screens
+      padding: 40px 20px;
     }
   }
 }
 </style>
-
-
