@@ -9,9 +9,9 @@ declare module 'vue' {
   export interface GlobalComponents {
     CoreHeader: typeof import('./src/components/Core/Header/Header.vue')['default']
     PagesHomeCustomers: typeof import('./src/components/Pages/Home/Customers/Customers.vue')['default']
-    PagesHomeCustomersComments: typeof import('./src/components/Pages/Home/Customers/Comments.vue')['default']
+    PagesHomeCustomersComments: typeof import('./src/components/Pages/Home/Customers/Comments/Comments.vue')['default']
     PagesHomeCustomersLogo: typeof import('./src/components/Pages/Home/Customers/Logo.vue')['default']
-    PagesHomeCustomersRecords: typeof import('./src/components/Pages/Home/Customers/Records.vue')['default']
+    PagesHomeCustomersRecords: typeof import('./src/components/Pages/Home/Customers/Records/Records.vue')['default']
     PagesHomeDomain: typeof import('./src/components/Pages/Home/Domain/index.vue')['default']
     PagesHomeDomainList: typeof import('./src/components/Pages/Home/Domain/List.vue')['default']
     PagesHomeHosts: typeof import('./src/components/Pages/Home/Hosts/index.vue')['default']

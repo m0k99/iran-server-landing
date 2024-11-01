@@ -124,10 +124,10 @@ import Fire from '@/icon/fire.svg'
         height: 100%;
         width: 40px;
         background: linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0) 0%,
-            #ffffff 50%,
-            rgba(255, 255, 255, 0) 100%
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          #ffffff 50%,
+          rgba(255, 255, 255, 0) 100%
         );
         content: '';
         position: absolute;
@@ -173,12 +173,14 @@ import Fire from '@/icon/fire.svg'
       object-fit: cover;
     }
   }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .domain-container {
+    padding: 59px 12px;
     .image-container {
       display: none;
     }
   }
 }
 </style>
-

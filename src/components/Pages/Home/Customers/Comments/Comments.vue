@@ -38,8 +38,12 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import Comment from '@/icon/Component.svg'
+import type { ICommentsProps } from '@/components/Pages/Home/Customers/Comments/Comments.d'
 
 const activeIndex = ref(0)
+
+const props = defineProps<ICommentsProps>()
+const testimonials = toRef(props, 'value')
 
 const slidesPerView = ref('auto')
 const breakpoints = ref({
@@ -53,34 +57,6 @@ const breakpoints = ref({
     slidesPerView: 1,
   },
 })
-
-const testimonials = [
-  {
-    text: 'ایران سرور یکی از بهترین راهکارها برای کمک کردن به کسب و کار های اینترنتی هست و از وقتی که ما سایت های خودمون رو به سرور های ایران سرور منتقل کردیم دغدغه ها و مشکلاتی که هر کسب و کار آنلاینی داره',
-    author: 'مهرداد منصوری فرد',
-    role: 'مدیر وب',
-  },
-  {
-    text: 'تجربه ما با ایران سرور فوق العاده بوده. پشتیبانی سریع و حرفه‌ای آن‌ها به ما کمک کرده تا همیشه در دسترس باشیم و کیفیت خدمات خود را حفظ کنیم.',
-    author: 'سمیرا شریفی',
-    role: 'مدیر فروش',
-  },
-  {
-    text: 'سرورهای ایران سرور بسیار پایدار و سریع هستند. ما با آرامش خاطر می‌توانیم به فعالیت‌های خود ادامه دهیم و هرگز نگرانی از قطع شدن سرویس نداریم.',
-    author: 'علی رضایی',
-    role: 'مدیر فنی',
-  },
-  {
-    text: 'از زمان استفاده از خدمات ایران سرور، بارگزاری وب‌سایت ما به طرز چشمگیری افزایش یافته است. تیم ایران سرور همیشه در دسترس هستند و به سوالات ما به سرعت پاسخ می‌دهند.',
-    author: 'فاطمه حسین‌زاده',
-    role: 'مدیر بازاریابی',
-  },
-  {
-    text: 'ایران سرور به عنوان یک راهکار مطمئن و حرفه‌ای در حوزه میزبانی وب شناخته می‌شود. ما به شدت از خدمات آنها راضی هستیم و به دیگران نیز توصیه می‌کنیم.',
-    author: 'محمدرضا غلامی',
-    role: 'مدیر پروژه',
-  },
-]
 
 const onSlideChange = swiper => {
   activeIndex.value = swiper.realIndex

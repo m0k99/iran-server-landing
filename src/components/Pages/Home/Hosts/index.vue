@@ -78,17 +78,16 @@ import Host from '@/icon/host.svg'
   .hosts-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    align-items: center;
+    column-gap: 30px;
     margin-top: 48px;
     height: 640px;
 
     .item {
       background: #ffffff;
       border-radius: 5px;
-      padding: 64px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex: 1;
+      padding: 64px 64px;
       row-gap: 40px;
       transition: all 0.3s ease-in-out;
 
@@ -171,45 +170,31 @@ import Host from '@/icon/host.svg'
       }
     }
   }
+}
 
-  @media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .host-container {
+    background: #f0f1f4;
+    padding: 88px 0;
+
     .hosts-container {
-      grid-template-columns: repeat(1, 1fr);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       height: auto;
-      gap: 20px;
-    }
+      row-gap: 40px;
 
-    .item {
-      padding: 40px 20px;
-
-      &:hover {
-        padding: 40px 20px;
-
-        .type-container .title {
-          font-size: 2rem;
-          color: #000000;
-        }
-
-        .type-container .subtitle {
-          color: #000000;
-        }
-
-        .see-plan-btn {
-          background: #2533cc14;
-          color: #2533cc;
+      .item {
+        &:hover {
+          padding: 64px 64px;
         }
       }
     }
   }
-
-  @media (max-width: 768px) {
+}
+@media (max-width: 700px) {
+  .host-container {
     .hosts-container {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    .item {
-      padding: 40px 20px;
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }

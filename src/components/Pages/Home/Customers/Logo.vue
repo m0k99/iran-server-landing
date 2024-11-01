@@ -71,7 +71,6 @@ const toggleShowMore = () => {
     justify-content: space-evenly;
     align-items: center;
 
-    // Responsive adjustments
     @media (max-width: 1200px) {
       grid-template-columns: repeat(5, 1fr);
     }
@@ -115,7 +114,6 @@ const toggleShowMore = () => {
   animation: bounce 1s infinite alternate;
   border: none;
 
-  // Responsive adjustments for the arrow icon
   @media (max-width: 576px) {
     width: 30px;
     height: 30px;

@@ -1,26 +1,12 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import type { IRecordProps } from '@/components/Pages/Home/Customers/Records/Records.d'
 
-const items = [
-  {
-    text: 'دیتاسنتر در سراسر جهان',
-    count: 70,
-  },
-  {
-    text: 'مشتری از سراسر ایران',
-    count: 167000,
-  },
-  {
-    text: 'خدمات ارائه شده',
-    count: 600000,
-  },
-  {
-    text: 'سال‌ حضور در مارکت',
-    count: 18,
-  },
-]
+const props = defineProps<IRecordProps>()
 
-const animatedCounts = ref(items.map(() => 0))
+const items = computed(() => props.value)
+
+const animatedCounts = ref(items.value.map(() => 0))
 const isVisible = ref(false)
 let observer: IntersectionObserver
 
@@ -29,7 +15,7 @@ const startCounting = () => {
   const incrementTime = 50
   const totalSteps = Math.floor(duration / incrementTime)
 
-  items.forEach((item, index) => {
+  items.value.forEach((item, index) => {
     const targetCount = item.count
     const increment = targetCount / totalSteps
     let currentCount = 0
@@ -60,7 +46,7 @@ const handleIntersect = (entries: IntersectionObserverEntry[]) => {
 
 onMounted(() => {
   observer = new IntersectionObserver(handleIntersect, {
-    threshold: 0.1,
+    threshold: 1,
   })
 
   const section = document.querySelector('.card-container')
@@ -84,7 +70,7 @@ onBeforeUnmount(() => {
       class="item-card d-flex flex-1 flex-column"
     >
       <span class="number">{{ animatedCounts[index] }}+</span>
-      <span class="text">{{ item.text }}</span>
+      <span class="text">{{ item.description }}</span>
     </div>
   </div>
 </template>
