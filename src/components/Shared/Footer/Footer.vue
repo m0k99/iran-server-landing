@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import Support from '@/icon/support.svg'
+import Aparat from '@/icon/ico_pack_social_media_aparat.svg'
+import Facebook from '@/icon/ico_pack_social_media_facebook.svg'
+import Twitter from '@/icon/ico_pack_social_media_twitter.svg'
+import Linkedin from '@/icon/ico_pack_social_media_linkedin.svg'
+import Instagram from '@/icon/ico_pack_social_media_instagram.svg'
+import Telegram from '@/icon/ico_pack_social_media_telegram.svg'
 </script>
 
 <template>
   <div class="footer">
-    <shared-container>
+    <SharedContainer>
       <div class="container-fluid">
         <div class="row row-cols-1 row-cols-lg-2 row-gap-5 p-0">
           <div
@@ -31,9 +37,9 @@ import Support from '@/icon/support.svg'
           </div>
         </div>
       </div>
-    </shared-container>
+    </SharedContainer>
     <div class="divider"></div>
-    <shared-container>
+    <SharedContainer>
       <div class="about px-2">
         <div class="content">
           <h1 class="title">رسالت ایران سرور</h1>
@@ -47,12 +53,48 @@ import Support from '@/icon/support.svg'
           </h3>
         </div>
         <img class="enamad" src="/Images/enamad.png" alt="" />
+        <div>
+          <ul class="list-container">
+            <li class="item">شرایط استفاده از خدمات ایران سرور</li>
+            <li class="item">خط مشی سیستم مدیریت امنیت اطلاعات</li>
+          </ul>
+          <div class="icons-container">
+            <a href="/">
+              <Aparat class="icon" />
+            </a>
+            <a href="/">
+              <Facebook class="icon" />
+            </a>
+            <a href="/">
+              <Twitter class="icon" />
+            </a>
+            <a href="/">
+              <Linkedin class="icon" />
+            </a>
+            <a href="/">
+              <Instagram class="icon" />
+            </a>
+            <a href="/">
+              <Telegram class="icon" />
+            </a>
+          </div>
+        </div>
       </div>
-    </shared-container>
+    </SharedContainer>
     <div class="divider"></div>
-    <shared-container>
-      <div>asd</div>
-    </shared-container>
+    <SharedContainer>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="green-web">طراحی سایت توسط هلدینگ دانش بنیان گرین وب</div>
+        <div class="green-web d-flex align-items-center gap-3">
+          <a href="/"> درباره ما </a>
+          <span>|</span>
+          <a href="/"> قوانین استفاده از ایران سرور </a>
+          <span>|</span>
+          <span> Copyright 2002-2020 </span>
+          <span class="copy-right">&#169;</span>
+        </div>
+      </div>
+    </SharedContainer>
   </div>
 </template>
 
@@ -87,6 +129,8 @@ import Support from '@/icon/support.svg'
   .about {
     display: flex;
     column-gap: 56px;
+    align-items: center;
+    flex-wrap: wrap;
 
     .content {
       display: flex;
@@ -117,6 +161,51 @@ import Support from '@/icon/support.svg'
       height: 200px;
       object-fit: cover;
       object-position: center;
+    }
+
+    .list-container {
+      .item {
+        margin-bottom: 8px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 2rem;
+        letter-spacing: -0.024em;
+        color: #ffffff;
+
+        &::marker {
+          color: #fb8d04;
+        }
+      }
+    }
+
+    .icons-container {
+      margin-top: 28px;
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  .green-web {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.75rem;
+    letter-spacing: -0.023em;
+    color: #c6cdda;
+
+    a {
+      text-decoration: none;
+      color: #c6cdda;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+
+    .copy-right {
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 1.375rem;
+      font-weight: 400;
+      line-height: 2.125rem;
     }
   }
 
