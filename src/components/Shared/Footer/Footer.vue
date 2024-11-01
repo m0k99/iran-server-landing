@@ -83,7 +83,9 @@ import Telegram from '@/icon/ico_pack_social_media_telegram.svg'
     </SharedContainer>
     <div class="divider"></div>
     <SharedContainer>
-      <div class="d-flex justify-content-between align-items-center">
+      <div
+        class="d-flex flex-wrap gap-3 justify-content-between align-items-center"
+      >
         <div class="green-web">طراحی سایت توسط هلدینگ دانش بنیان گرین وب</div>
         <div class="green-web d-flex align-items-center gap-3">
           <a href="/"> درباره ما </a>
@@ -131,6 +133,7 @@ import Telegram from '@/icon/ico_pack_social_media_telegram.svg'
     column-gap: 56px;
     align-items: center;
     flex-wrap: wrap;
+    row-gap: 20px;
 
     .content {
       display: flex;

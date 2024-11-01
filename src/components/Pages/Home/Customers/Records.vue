@@ -75,11 +75,11 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="card-container d-flex align-items-center justify-content-start">
+  <div class="card-container">
     <div
       v-for="(item, index) in items"
       :key="index"
-      class="item-card d-flex flex-column"
+      class="item-card d-flex flex-1 flex-column"
     >
       <span class="number">{{ animatedCounts[index] }}+</span>
       <span class="text">{{ item.text }}</span>
@@ -92,20 +92,23 @@ onBeforeUnmount(() => {
 
 <style scoped lang="scss">
 .card-container {
+  display: grid;
   gap: 30px;
+  width: 100%;
 
   .item-card {
     background: #ffffff;
     padding: 48px 24px;
     border-radius: 5px;
-    flex: 1;
+    text-align: center;
+    color: #364163;
+    width: 100%;
 
     .number {
       font-size: 3.75rem;
       font-weight: 600;
       line-height: 5.625rem;
       letter-spacing: -0.03em;
-      text-align: center;
       color: #2533cc;
     }
 
@@ -114,9 +117,18 @@ onBeforeUnmount(() => {
       font-weight: 700;
       line-height: 1.6875rem;
       letter-spacing: -0.03em;
-      text-align: center;
-      color: #364163;
     }
+  }
+
+  grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 </style>
+

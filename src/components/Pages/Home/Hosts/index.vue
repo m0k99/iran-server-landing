@@ -76,18 +76,19 @@ import Host from '@/icon/host.svg'
   padding: 88px 0;
 
   .hosts-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Default to three columns for desktop
+    gap: 30px;
     margin-top: 48px;
-    height: 640px;
+    height: 640px; // Full height for desktop only
 
     .item {
       background: #ffffff;
       border-radius: 5px;
-      flex: 1;
-      padding: 64px 64px;
+      padding: 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       row-gap: 40px;
       transition: all 0.3s ease-in-out;
 
@@ -145,6 +146,7 @@ import Host from '@/icon/host.svg'
         border: none;
       }
 
+      // Hover effects for desktop only
       &:hover {
         padding: 88px 64px;
 
@@ -170,5 +172,47 @@ import Host from '@/icon/host.svg'
       }
     }
   }
+
+  // Tablet view: two columns without hover effects and fixed height
+  @media (max-width: 1024px) {
+    .hosts-container {
+      grid-template-columns: repeat(1, 1fr); // Two columns on tablet
+      height: auto; // Remove fixed height
+      gap: 20px;
+    }
+
+    .item {
+      padding: 40px 20px; // Adjust padding for smaller screens
+
+      &:hover {
+        padding: 40px 20px; // Remove hover padding increase
+        .type-container .title {
+          font-size: 2rem; // Prevent font size increase on hover
+          color: #000000; // Remove hover color change
+        }
+        .type-container .subtitle {
+          color: #000000;
+        }
+        .see-plan-btn {
+          background: #2533cc14; // Keep default background color
+          color: #2533cc; // Keep default text color
+        }
+      }
+    }
+  }
+
+  // Mobile view: single column layout
+  @media (max-width: 768px) {
+    .hosts-container {
+      grid-template-columns: 1fr; // Single column on mobile
+      gap: 24px;
+    }
+
+    .item {
+      padding: 40px 20px; // Adjust padding for smaller screens
+    }
+  }
 }
 </style>
+
+

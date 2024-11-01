@@ -11,7 +11,7 @@ import Check from '@/icon/check.svg'
       </div>
       <div class="content-container position-relative">
         <div class="d-flex align-items-center justify-content-start gap-3">
-          <Secure />
+          <Secure class="secure-icon" />
           <div class="flex-column d-flex gap-2">
             <CoreHeader>
               <template #title>
@@ -21,8 +21,8 @@ import Check from '@/icon/check.svg'
                 <div class="text-start">
                   ایران سرور با ابزارهای روزآمد؛ سیاست‌های امنیتی استاندارد؛
                   سخت‌افزارهای امنیتی برتر؛ حداکثر امنیت را برای شما به ارمغان
-                  می‌آورد.</div
-                >
+                  می‌آورد.
+                </div>
               </template>
             </CoreHeader>
           </div>
@@ -87,7 +87,7 @@ import Check from '@/icon/check.svg'
     .items-container {
       margin-top: 48px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 8px 30px;
       width: 100%;
 
@@ -118,6 +118,28 @@ import Check from '@/icon/check.svg'
       height: 410.71px;
       object-fit: cover;
       object-position: center;
+    }
+  }
+
+  @media (max-width: 1224px) {
+    .image-container {
+      display: none;
+    }
+    .content-container {
+      max-width: 100%;
+      padding: 80px 20px;
+    }
+  }
+
+  @media (max-width: 868px) {
+    .content-container {
+      max-width: 100%;
+      padding: 60px 16px;
+    }
+
+    .items-container {
+      grid-template-columns: repeat(1, 1fr) !important;
+      gap: 8px 0;
     }
   }
 }
