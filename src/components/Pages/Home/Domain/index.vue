@@ -24,13 +24,15 @@ import Fire from '@/icon/fire.svg'
       </form>
       <div class="d-flex flex-column gap-3">
         <div
-          class="suffix-container d-flex align-items-center justify-content-start gap-2"
+          class="suffix-container d-flex align-items-center justify-content-start"
         >
-          <div class="d-flex align-items-center justify-content-start gap-2">
+          <div
+            class="fire d-flex align-items-center justify-content-start gap-2"
+          >
             <Fire />
             <span class="text"> داغ ترین پسوندها</span>
           </div>
-          <div>Domains list</div>
+          <PagesHomeDomainList />
         </div>
         <div
           class="discount-container d-flex gap-2 align-items-center justify-content-center"
@@ -48,7 +50,7 @@ import Fire from '@/icon/fire.svg'
 
 <style scoped lang="scss">
 .domain-container {
-  padding: 59px 0 117px;
+  padding: 59px 12px 117px;
 
   .title {
     font-size: 2.5rem;
@@ -115,6 +117,29 @@ import Fire from '@/icon/fire.svg'
     }
 
     .suffix-container {
+      gap: 28px;
+      position: relative;
+
+      &:after {
+        height: 100%;
+        width: 40px;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            #ffffff 50%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        content: '';
+        position: absolute;
+        right: 135px;
+        top: 0;
+        z-index: 10;
+      }
+
+      .fire {
+        min-width: 127px;
+      }
+
       .text {
         font-size: 1rem;
         font-weight: 700;
@@ -148,5 +173,12 @@ import Fire from '@/icon/fire.svg'
       object-fit: cover;
     }
   }
+
+  @media (max-width: 768px) {
+    .image-container {
+      display: none;
+    }
+  }
 }
 </style>
+

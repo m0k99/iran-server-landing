@@ -87,7 +87,7 @@ const onSlideChange = swiper => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .testimonials {
   .my-swiper {
     .swiper-slide {

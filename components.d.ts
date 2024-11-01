@@ -13,6 +13,7 @@ declare module 'vue' {
     PagesHomeCustomersLogo: typeof import('./src/components/Pages/Home/Customers/Logo.vue')['default']
     PagesHomeCustomersRecords: typeof import('./src/components/Pages/Home/Customers/Records.vue')['default']
     PagesHomeDomain: typeof import('./src/components/Pages/Home/Domain/index.vue')['default']
+    PagesHomeDomainList: typeof import('./src/components/Pages/Home/Domain/List.vue')['default']
     PagesHomeHosts: typeof import('./src/components/Pages/Home/Hosts/index.vue')['default']
     PagesHomeOperation: typeof import('./src/components/Pages/Home/Operation/Operation.vue')['default']
     PagesHomeSecurity: typeof import('./src/components/Pages/Home/Security/index.vue')['default']
